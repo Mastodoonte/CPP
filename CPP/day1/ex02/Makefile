@@ -10,9 +10,8 @@ ERASE_ALL = $(ESC_SEQ)M
 ESC_STOP = $(ESC_SEQ)0m
 PRINT_INTERLINE = printf '$(GREEN)$(BOLD)================================================================================$(ESC_STOP)\n'
 
-SRCS	= 	srcs/getteur_setter.cpp \
-			srcs/phonebook.cpp \
-			srcs/main.cpp
+SRCS	= 	srcs/Account.cpp \
+			srcs/tests.cpp \
  		
 ########################################################################################################################################
 OBJS = ${SRCS:.cpp=.o}
@@ -21,7 +20,7 @@ CLANG = clang++
 
 HEADER	= include
 
-NAME = phonebook
+NAME = GlobalBanksters
 
 CLANG = clang++
 
@@ -42,12 +41,12 @@ $(NAME): $(OBJS)
 	@$(PRINT_INTERLINE)
 	@printf '$(YELLOW)$(BOLD)linking object files$(ESC_STOP)\n'
 #@printf '\n'
-	@sleep 1s
+#@sleep 0.5s
 	@echo '.'
-	@sleep 1s
+#@sleep 1s
 #@printf '\n'
 	@echo '..'
-	@sleep 1s
+#@sleep 1s
 #@printf '\n'
 	@echo '...'
 	@printf '\n'
