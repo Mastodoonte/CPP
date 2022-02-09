@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/08 15:00:08 by florianmast       #+#    #+#              #
-#    Updated: 2022/02/08 15:00:09 by florianmast      ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 ESC_SEQ = \033[
 BLUE = $(ESC_SEQ)34m
 RED= $(ESC_SEQ)31m
@@ -22,9 +10,10 @@ ERASE_ALL = $(ESC_SEQ)M
 ESC_STOP = $(ESC_SEQ)0m
 PRINT_INTERLINE = printf '$(GREEN)$(BOLD)================================================================================$(ESC_STOP)\n'
 
-SRCS	= 	srcs/getteur_setter.cpp \
-			srcs/phonebook.cpp \
-			srcs/main.cpp
+SRCS	= 	srcs/HumanB.cpp \
+			srcs/HumanA.cpp \
+			srcs/main.cpp \
+			srcs/Weapon.cpp \
  		
 ########################################################################################################################################
 OBJS = ${SRCS:.cpp=.o}
@@ -33,7 +22,7 @@ CLANG = clang++
 
 HEADER	= include
 
-NAME = phonebook
+NAME = Useless_violence
 
 CLANG = clang++
 
@@ -54,12 +43,12 @@ $(NAME): $(OBJS)
 	@$(PRINT_INTERLINE)
 	@printf '$(YELLOW)$(BOLD)linking object files$(ESC_STOP)\n'
 #@printf '\n'
-	@sleep 1s
+#@sleep 0.5s
 	@echo '.'
-	@sleep 1s
+#@sleep 1s
 #@printf '\n'
 	@echo '..'
-	@sleep 1s
+#@sleep 1s
 #@printf '\n'
 	@echo '...'
 	@printf '\n'
@@ -74,14 +63,14 @@ $(NAME): $(OBJS)
 clean: 
 	${RM} ${OBJS}
 	@$(PRINT_INTERLINE)
-	@printf '$(RED)$(BOLD)|                              %s\ CLEANNING                             |\n' '$(NAME)'
+	@printf '$(RED)$(BOLD)|                              %s\ CLEANNING                       |\n' '$(NAME)'
 	@$(PRINT_INTERLINE)
 	@printf '$(RED)$(BOLD) %s\ removed\n' '$(OBJS)'
 	@$(PRINT_INTERLINE)
 
 fclean: clean
 	@${RM} ${NAME}
-	@printf '$(RED)$(BOLD)|                              %s\ FCLEAN                                |\n' '$(NAME)'
+	@printf '$(RED)$(BOLD)|                              %s\ FCLEAN                          |\n' '$(NAME)'
 	@$(PRINT_INTERLINE)
 	@printf '$(RED)$(BOLD) %s\ removed\n' '$(NAME)'
 	@$(PRINT_INTERLINE)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/08 15:00:57 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/08 15:00:58 by florianmast      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/Account.hpp"
 #include <iostream>
 #include <iomanip>
@@ -8,8 +20,7 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0; 
 
-Account::Account (int initial_deposit) : _accountIndex(Account::_nbAccounts), _amount(initial_deposit),
-_nbDeposits(0), _nbWithdrawals(0)
+Account::Account (int initial_deposit)
 {
     this->_accountIndex = _nbAccounts;
     this->_nbAccounts += 1;

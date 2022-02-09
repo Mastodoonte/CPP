@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   getteur_setter.cpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/08 14:59:54 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/08 14:59:55 by florianmast      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/Phonebook.hpp"
 
 std::string    contact::get_first_name(void)
