@@ -9,11 +9,9 @@ ERASE = \r$(ESC_SEQ)K
 ERASE_ALL = $(ESC_SEQ)M
 ESC_STOP = $(ESC_SEQ)0m
 PRINT_INTERLINE = printf '$(GREEN)$(BOLD)================================================================================$(ESC_STOP)\n'
+PRINT_INTERLINE_N = printf '$(YELLOW)$(BOLD)================================================================================$(ESC_STOP)\n'
 
-SRCS	= 	srcs/HumanB.cpp \
-			srcs/HumanA.cpp \
-			srcs/main.cpp \
-			srcs/Weapon.cpp \
+SRCS	= 	srcs/main.cpp \
  		
 ########################################################################################################################################
 OBJS = ${SRCS:.cpp=.o}
@@ -22,7 +20,7 @@ CLANG = clang++
 
 HEADER	= include
 
-NAME = Useless_violence
+NAME = sed
 
 CLANG = clang++
 
@@ -63,14 +61,17 @@ $(NAME): $(OBJS)
 clean: 
 	${RM} ${OBJS}
 	@$(PRINT_INTERLINE)
-	@printf '$(RED)$(BOLD)|                              %s\ CLEANNING                       |\n' '$(NAME)'
+	@printf '$(RED)$(BOLD)                              %s\ CLEANNING                       \n' '$(NAME)'
 	@$(PRINT_INTERLINE)
 	@printf '$(RED)$(BOLD) %s\ removed\n' '$(OBJS)'
 	@$(PRINT_INTERLINE)
+	@printf '\n'
+	@printf '\n'
 
 fclean: clean
 	@${RM} ${NAME}
-	@printf '$(RED)$(BOLD)|                              %s\ FCLEAN                          |\n' '$(NAME)'
+	@$(PRINT_INTERLINE)
+	@printf '$(RED)$(BOLD)                              %s\ FCLEAN                          \n' '$(NAME)'
 	@$(PRINT_INTERLINE)
 	@printf '$(RED)$(BOLD) %s\ removed\n' '$(NAME)'
 	@$(PRINT_INTERLINE)
