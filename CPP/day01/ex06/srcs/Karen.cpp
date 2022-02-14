@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 13:32:25 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/10 18:19:35 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/11 10:04:55 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void    Karen::complain(std::string level) const
             _error();
             break;
         }
-        case 4:
+        default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
 }

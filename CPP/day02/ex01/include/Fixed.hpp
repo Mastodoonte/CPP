@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 17:42:09 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/14 19:59:16 by florianmast      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+class Fixed{
+public:
+    Fixed( void );
+    ~Fixed( void );
+    Fixed(const int convert_icoma);
+    Fixed(const float convert_fcoma);
+    Fixed(Fixed const & src );     
+    Fixed & operator=( Fixed const &src );     //Surchage d'operateur d'affectation    
+    int     getRawBits( void ) const;       //getteur
+    void    setRawBits(int const raw);      //setteur
+    float toFloat( void ) const;
+    int toInt( void ) const;
+    
+private: 
+    static const int _integer_coma = 8;
+    int              _integer_fixed;    // Raw bits
+};
+
+//Attention puisque diminution de la valeur d'encapsulation 
+// revient à std::ostream & o << Fixed const & i
+//Methode d'affichage d'une valeur sur notre classe 
+std::ostream &  operator<<( std::ostream & o, Fixed const & i); // 
