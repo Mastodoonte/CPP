@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:00:01 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/08 15:00:02 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/15 11:32:48 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,26 +147,26 @@ void    Phonebook::new_contact(int i)
         if (j == 0)
         {
             std::cout << "Please write down the first name" << std::endl;
-            std::cin >> buff;
+            std::getline(std::cin, buff);
             this->_contact[i].set_first_name(buff);
 
         }
         else if(j == 1)
         {
             std::cout << "Please write down the nickname" << std::endl;
-            std::cin >> buff;
+            std::getline(std::cin, buff);
             this->_contact[i].set_nickname(buff);
         }
         else if (j == 2)
         {
             std::cout << "Please write down the phone number" << std::endl;
-            std::cin >> buff;
+            std::getline(std::cin, buff);
             this->_contact[i].set_phone(buff);
         }
         else if (j == 3)
         {
             std::cout << "Please write down your darkest secret " << std::endl;
-            std::cin >> buff;
+            std::getline(std::cin, buff);
             this->_contact[i].set_secret(buff);
         }
         j++;
