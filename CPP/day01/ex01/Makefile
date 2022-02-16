@@ -26,7 +26,7 @@ NAME = More_Brainz
 
 CLANG = clang++
 
-C++FLAGS =  -Wall -Werror -Wextra -std=c++98 -pedantic -g3
+C++FLAGS =  -std=c11 -Wall -Werror -Wextra -std=c++98 -pedantic -ggdb3
 
 RM = rm -f
 
@@ -63,14 +63,14 @@ $(NAME): $(OBJS)
 clean: 
 	${RM} ${OBJS}
 	@$(PRINT_INTERLINE)
-	@printf '$(RED)$(BOLD)|                              %s\ CLEANING                             |\n' '$(NAME)'
+	@printf '$(RED)$(BOLD)|                              %s\ CLEANING                            |\n' '$(NAME)'
 	@$(PRINT_INTERLINE)
 	@printf '$(RED)$(BOLD) %s\ removed\n' '$(OBJS)'
 	@$(PRINT_INTERLINE)
 
 fclean: clean
 	@${RM} ${NAME}
-	@printf '$(RED)$(BOLD)|                              %s\ FCLEAN                                |\n' '$(NAME)'
+	@printf '$(RED)$(BOLD)|                              %s\ FCLEAN                              |\n' '$(NAME)'
 	@$(PRINT_INTERLINE)
 	@printf '$(RED)$(BOLD) %s\ removed\n' '$(NAME)'
 	@$(PRINT_INTERLINE)

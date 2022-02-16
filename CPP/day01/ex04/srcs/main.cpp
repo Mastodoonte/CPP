@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:08:35 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/10 12:05:03 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/16 12:21:40 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void strreplace(std::string *line, const std::string s1, const std::string s2 )
     position = line->find(s1);
     while (position != (std::string::npos))
     {
-        if(position == std::string::npos )
-            break;
         line->erase(position, s1.length());
         line->insert(position, s2);
         position = line->find( s1, position);
@@ -40,12 +38,16 @@ int main(int ac, char **av)
         std::ifstream ifs(av[1]);
         if (!ifs || ifs.fail() || !ifs.good()|| ifs.peek() == std::ifstream::traits_type::eof())
         {
-            std::cout << "error: file doesn't exist or do not have the good permissions" << std::endl;
+            std::cout << "error: file doesn't exist/ is empty/  or do not have the good permissions" << std::endl;
             return (1);
         }
         
         old_name = av[1];
         std::ofstream end_fd(old_name + ".replace");
+        if (end_fd.fail())
+        {
+            std::cout << "Error: impossible to open the output file" << std::endl;
+        }
         while (std::getline(ifs, line))
         {
             if (ifs)

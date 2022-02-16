@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 13:32:25 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/10 17:57:10 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/16 12:39:12 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void    Karen::complain(std::string level) const
     int i;
     //Initialisation d'une tableau de pointeur sur 4 fonctions 
    void (Karen::*choice[4]) () const = { &Karen::_debug, &Karen::_info, &Karen::_warning, &Karen::_error};
+   
    //Initialisation d'un tableau pour la comparaison en boucle
    std::string level_complain[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     i = 0;

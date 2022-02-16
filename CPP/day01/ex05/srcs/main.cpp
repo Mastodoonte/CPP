@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 13:32:22 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/10 17:56:48 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/16 12:40:55 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,10 @@ int main(int ac, char **av)
         std::cout << "Hello, ";
         while (1)
         {
-            std::cout << "please write down a complain for Karen: -DEBUG -INFO -WARNING -ERROR -EXIT" << std::endl;
+            std::cout << "please write down a complain for Karen: -DEBUG -INFO -WARNING -ERROR -CTRL + c" << std::endl;
             std::cout << "=>";
             std::cin >> entry ;
             std::cout << std::endl;
-            if (entry == "EXIT")
-                return (0);
             karen.complain(entry);
             std::cout << std::endl;
         }

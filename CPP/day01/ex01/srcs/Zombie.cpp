@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:00:36 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/09 10:13:18 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/16 11:14:28 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ Zombie::Zombie(void)
 Zombie::Zombie(std::string str)
 {
     std::cout << "Zombie construction " << str << std::endl;
-    this->set_name(str);
-    
+    this->set_name(str); 
 }
 
 Zombie::~Zombie(void)
@@ -38,6 +37,7 @@ std::string Zombie::get_name(void) const
 {
     return (this->_name);
 }
+
 void    Zombie::announce(void) const
 {
     std::cout << this->get_name() << ": ";
