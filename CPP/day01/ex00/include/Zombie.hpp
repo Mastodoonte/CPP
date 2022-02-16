@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:01:20 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/08 18:21:18 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/16 09:35:49 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Zombie{
         std::string _name;
 
     public:
-        void         announce (void) const;
-        void        set_name(std::string str);
-        std::string get_name(void) const;
-        Zombie(std::string str);
+        void            announce (void) const;
+        void            set_name(std::string str);
+        std::string     get_name(void) const;
+        Zombie (std::string str);
         ~Zombie(void);
 };
 

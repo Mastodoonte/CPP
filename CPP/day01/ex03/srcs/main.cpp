@@ -6,13 +6,12 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:06:13 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/09 17:00:55 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/16 09:53:14 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/HumanB.hpp"
 
-//Question, comment prouver que HumanA peut ne
 int main()
 {
     {
@@ -26,8 +25,7 @@ int main()
         bob.attack();
     }
     {
-        Weapon  club = Weapon("crude spiked club");
-       
+       Weapon  club = Weapon("crude spiked club");  
         HumanB jim("Jim");
         jim.setWeapon(club);
         jim.attack();

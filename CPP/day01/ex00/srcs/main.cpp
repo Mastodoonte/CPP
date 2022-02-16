@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 11:06:46 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/16 09:38:03 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/16 09:55:33 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/16 10:12:58 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#include "../include/Zombie.hpp"
 
-#include "HumanB.hpp"
-
-class Weapon{
-    private:
-      std::string  _type;
-
-    public: 
-    std::string const &   getType(void) const;
-    void                  setType(std::string const &type);
-    Weapon(std::string const &type);
-    ~Weapon(void);
-    
-    
-};
-
-#endif
+int main(void)
+{
+    randomChump("zombie_stack");
+    Zombie *zombie_heap = newZombie("zombie_heap");
+    if (!zombie_heap)
+    {
+        std::cout << "problem allocation" << std::endl;
+        return (0);
+    }
+    zombie_heap->announce();
+    delete(zombie_heap);
+    return (0);
+}

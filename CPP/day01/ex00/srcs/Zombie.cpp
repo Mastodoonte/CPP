@@ -6,12 +6,11 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:00:36 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/08 18:21:06 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/16 09:55:23 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Zombie.hpp"
-
 
 Zombie::Zombie(std::string str)
 {

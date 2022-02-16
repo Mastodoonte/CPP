@@ -31,7 +31,7 @@ RM = rm -f
 all: ${NAME}
 
 $(NAME): $(OBJS)
-	@$(CLANG) $(CFLAGS) -I $(HEADER) -o $(NAME) $(OBJS)
+	@$(CLANG) $(C++FLAGS) -I $(HEADER) -o $(NAME) $(OBJS)
 	@$(PRINT_INTERLINE)
 	@printf '$(YELLOW)executable name: $(BOLD)%s$(ESC_STOP)\n' '$(NAME)';
 	@printf '$(YELLOW)compiler:$(ESC_STOP) %s\n' '$(CXX)'; 

@@ -58,7 +58,7 @@ $(NAME): $(OBJS)
 	@printf '\n'
 
 %.o : %.c
-	$(CLANG) $(CFLAGS) -I $(HEADER) -c $< -o $@
+	$(CLANG) $(C++FLAGS) -I $(HEADER) -c $< -o $@
 
 clean: 
 	${RM} ${OBJS}
