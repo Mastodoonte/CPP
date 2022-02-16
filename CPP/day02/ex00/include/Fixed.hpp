@@ -1,14 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:42:09 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/14 14:40:17 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/16 20:07:59 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <string>
@@ -29,3 +32,5 @@ private:
 };
 
 std::ostream &  operator<<( std::ostream & o, Fixed const & i);
+
+#endif

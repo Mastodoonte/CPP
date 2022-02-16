@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:42:09 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/14 19:59:16 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/16 20:08:33 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <string>
@@ -36,3 +39,5 @@ private:
 // revient à std::ostream & o << Fixed const & i
 //Methode d'affichage d'une valeur sur notre classe 
 std::ostream &  operator<<( std::ostream & o, Fixed const & i); // 
+
+#endif
