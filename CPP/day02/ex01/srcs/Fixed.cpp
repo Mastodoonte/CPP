@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:30:47 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/14 20:50:24 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/17 11:27:50 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed::Fixed(void)
 Fixed::Fixed(const int convert_icoma)
 {
   std::cout << "Int constructor called" << std::endl;
- _integer_fixed = convert_icoma * pow(2, _integer_coma); 
+ _integer_fixed = convert_icoma * pow(2, _integer_coma);
 }
 
 //transform float to integer 

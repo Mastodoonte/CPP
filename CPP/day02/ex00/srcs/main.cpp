@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:36:23 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/14 14:19:26 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/17 10:22:20 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main( void )
     Fixed c;        
    
     c = b;          //Assignement operator
-   std::cout << a.getRawBits() << std::endl;
+    std::cout << a.getRawBits() << std::endl;
     std::cout << b.getRawBits() << std::endl;
     std::cout << c.getRawBits() << std::endl;
     return 0;
