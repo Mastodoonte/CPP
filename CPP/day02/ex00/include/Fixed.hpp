@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:42:09 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/17 11:35:21 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/18 11:25:56 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 // The Radix is the position of the point on the bits
 // 16 to 8 scale (radix) nee the precision on the right but open on the left 
 // 0000 0000.0000 0000 0000 0000 0000 0000 is 24 radix point
+//https://stackoverflow.com/questions/10067510/fixed-point-arithmetic-in-c-programming?fbclid=IwAR1cvg0ZId-HV8Efo7qshJrTfXwQIbVb8HFzDFIq4MlJjLduvg1CX8ydhUo
 
 class Fixed{
 public:
