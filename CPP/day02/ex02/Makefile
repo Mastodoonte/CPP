@@ -18,13 +18,12 @@ SRCS	= 	srcs/main.cpp \
 ########################################################################################################################################
 OBJS = ${SRCS:.cpp=.o}
 
-CLANG = clang++
+CLANG = c++
 
 HEADER	= include/
 
 NAME = a.out
 
-CLANG = c++
 
 C++FLAGS =  -Wall -Werror -Wextra -std=c++98 -pedantic -g
 

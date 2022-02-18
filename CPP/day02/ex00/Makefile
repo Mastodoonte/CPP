@@ -24,7 +24,6 @@ HEADER	= include/
 
 NAME = a.out
 
-CLANG = c++
 
 C++FLAGS =  -Wall -Werror -Wextra -std=c++98 -pedantic -g
 
