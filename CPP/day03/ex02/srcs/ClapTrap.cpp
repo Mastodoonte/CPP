@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 22:13:49 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/20 15:49:48 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/20 15:45:07 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,13 @@ void    ClapTrap::takeDamage(unsigned int amount)
   int hp = this->get_hp();
   if (hp > amount )
   {
-    this->_hitsPoints = hp - amount;
+    
+    this->_hitsPoints = (hp - amount);
     std::cout << "ClapTrap " << this->_name << " takes " << amount << " of damage" << std::endl;
   }
   else
   {
-    this->set_hp(0);
+    this->_hitsPoints = 0;
     std::cout << "ClapTrap " << this->_name << " takes " << amount << " of damage and is dead " << std::endl;
   }
 }
@@ -78,9 +79,9 @@ void    ClapTrap::beRepaired(unsigned int amount)
   if (energy_left > 0)
   {
     unsigned int reparation = this->get_hp() + amount;
-    this->_hitsPoints = reparation;
+   this->_hitsPoints = reparation;
+   this->_energyPoints--;
     std::cout << "ClapTrap " << this->_name << " takes " << amount << " of reparation " << std::endl;
-    this->_energyPoints--;
   }
   else
   {
@@ -95,7 +96,7 @@ std::string    ClapTrap::get_name(void)
 
 unsigned int    ClapTrap::get_hp(void)
 {
-  return (this->_hitsPoints);
+  return ((unsigned int )this->_hitsPoints);
 }
 
 unsigned int    ClapTrap::get_ep(void)

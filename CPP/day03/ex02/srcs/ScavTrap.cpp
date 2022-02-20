@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Scavtrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:25:19 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/20 15:51:27 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/20 15:00:45 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ScavTrap::~ScavTrap()
 ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap::ClapTrap(src)
 {
   std::cout << "ScavTrap Operator of copy has been called" << std::endl;
-  *this = src;;
+  *this = src;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & src)
@@ -55,7 +55,6 @@ void    ScavTrap::attack(const std::string& target)
   if (energy_left > 0)
   {
     std::cout << "ScavTrap " << this->_name << " attacks " << target << "and involve " << this->_attackDamage << " points of damage" << std::endl;
-    _energyPoints--; 
   }
   else
   {
