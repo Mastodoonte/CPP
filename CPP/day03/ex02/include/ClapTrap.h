@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 23:40:44 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/20 13:57:38 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/21 09:42:45 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ public:
     void            set_ad(unsigned int ad);
     
    
-    virtual void    attack(const std::string& target);
+    void    attack(const std::string& target);
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
 
