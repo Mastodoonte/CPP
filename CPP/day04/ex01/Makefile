@@ -26,9 +26,9 @@ HEADER	= include/
 
 NAME = a.out
 
-CLANG = c++
+CLANG = c++ -g
 
-C++FLAGS = -std=c++11 -Wall -Werror -Wextra -std=c++98 -pedantic -g
+C++FLAGS =  -Wall -Werror -Wextra -pedantic -g
 
 RM = rm -f
 
@@ -62,8 +62,13 @@ $(NAME): $(OBJS)
 %.o : %.c
 	$(CLANG) $(CFLAGS) -I $(HEADER) -c $< -o $@
 
+debug:
+	g++ -g ${SRCS} -Wall -Werror -Wextra -o debog_exec
+	@printf '$(YELLOW)$(BOLD) debog_exec built $(ESC_STOP) √\n' '$@';
+	@printf '\n'
+
 clean: 
-	${RM} ${OBJS}
+	${RM} ${OBJS} debog_exec
 	@$(PRINT_INTERLINE)
 	@printf '$(RED)$(BOLD)                              %s\ CLEANNING                       \n' '$(NAME)'
 	@$(PRINT_INTERLINE)
