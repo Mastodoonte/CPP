@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:26:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/22 11:39:02 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/22 17:11:32 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,39 @@ Dog::Dog(void)
 
 Dog::~Dog(void)
 {
+  std::cout << this->_type << " destruction " << std::endl ;
   delete this->_brain;
-  std::cout << "Default dog destructor called" << std::endl;
 }
 
 Dog::Dog(Dog const & src)
 {
+  this->_brain = NULL;
   *this = src;
+  this->_type = "Deep dog ";
+  std::cout << this->getType() << "created" << std::endl;
+  return ;
 }
+
 
 //https://www.youtube.com/watch?v=JDvFAcaaeu4 must watch to save some time 
 Dog   &Dog::operator=(Dog const &src)
 {
-  std::cout << "Dog assignation operator with dog call" << std::endl;
-  this->_type = src.getType();
-  new Brain (*(src._brain));
-  return (*this);
+  if (this == &src)
+  {
+    std::cout << "Dog assignation operator for "<< this->getType() << std::endl;
+    return (*this);
+  }
+  else
+  {
+    this->_type = src.getType();
+    if (this->_brain)
+      delete this->_brain;
+    this->_brain = new Brain (*(src._brain)); //Ici creation en dupliquant pour ne pas pointer vers la mauvaise zone memoire
+    std::cout << "Dog assignation operator for "<< this->getType() << std::endl;
+    return (*this);
+  }
 }
 
-Animal &Dog::operator=(const Animal & src) 
-{
-  std::cout << "Animal assignation operator with dog call" << std::endl;
-  this->_type = src.getType();
-  new Brain (*(src.get_brain()));
-  return (*this);
-}
 
 void    Dog::makeSound(void) const
 {

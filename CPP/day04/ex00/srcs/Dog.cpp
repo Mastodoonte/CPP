@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 17:19:30 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/22 16:02:14 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/21 14:26:41 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/21 15:57:38 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H
-#define BRAIN_H
-#include <iostream>
-#include <string>
+#include "../include/Dog.h"
 
-class Brain
+Dog::Dog()
 {
-public:
-    Brain();
-    virtual ~Brain();
-    Brain(Brain const & src); //Constructeur par copie
-    Brain & operator=(Brain const & src);//Assignation 
-    
+  this->_type = "Dog";
+  std::cout << "Default dog constructor called" << std::endl;
+}
 
-protected:
-    std::string *ideas[100];
+Dog::~Dog()
+{
+  std::cout << "Default dog destructor called" << std::endl;
+}
 
-};
+Dog::Dog(Dog const & src)
+{
+  *this = src;
+}
 
-#endif
+Dog & Dog::operator=(Dog const & src)
+{
+  *this = src;
+  return (*this);
+}
+
+void    Dog::makeSound(void) const
+{
+  std::cout << "Make sound = Waaaf" << std::endl;
+}

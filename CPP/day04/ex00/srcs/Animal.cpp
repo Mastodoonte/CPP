@@ -6,21 +6,21 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:26:35 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/22 17:09:14 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/21 16:28:44 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.hpp"
+#include "../include/Animal.h"
 
 Animal::Animal()
 {
-  std::cout << "Animal/Mother class construction " << std::endl ; 
+  std::cout << "Default constructor Animal called" << std::endl;
   return;
 }
 
 Animal::~Animal()
 {
-  std::cout << "Animal/Mother class destruction " << std::endl ; 
+    std::cout << "Default destructor Animal called" << std::endl;
     return ;
 }
 
@@ -36,7 +36,6 @@ Animal::Animal(Animal const & src)
 
 Animal & Animal::operator=(Animal const & src)
 {
-  this->_type = src.getType();
   return (*this);
 }
 
@@ -44,3 +43,9 @@ void    Animal::makeSound(void) const
 {
   std::cout << "Unknown sounds from an unknown animal" << std::endl;
 }
+
+//Animal::Animal(std::string name) : _type(name)
+//{
+  //_type = name;
+//  std::cout << "Constructor called for Dog and type " << name << std::endl;
+//}

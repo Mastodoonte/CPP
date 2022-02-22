@@ -15,7 +15,8 @@ SRCS	= 	srcs/main.cpp \
 			srcs/Dog.cpp \
 			srcs/Cat.cpp \
 			srcs/Animal.cpp \
-			srcs/Brain.cpp 
+			srcs/WrongCat.cpp \
+			srcs/WrongAnimal.cpp\
 
  		
 ########################################################################################################################################
@@ -26,11 +27,11 @@ HEADER	= include/
 
 NAME = a.out
 
-CLANG = c++ -g
+CLANG = c++
 
-C++FLAGS =  -Wall -Werror -Wextra -pedantic -g
+C++FLAGS =  -Wall -Werror -Wextra -std=c++98 -pedantic -g
 
-RM = rm -rf
+RM = rm -f
 
 
 all: ${NAME}
@@ -62,13 +63,8 @@ $(NAME): $(OBJS)
 %.o : %.c
 	$(CLANG) $(CFLAGS) -I $(HEADER) -c $< -o $@
 
-debug:
-	@g++ -g ${SRCS} -Wall -Werror -Wextra -o debog_exec
-	@printf '$(YELLOW)$(BOLD) debog_exec built $(ESC_STOP) √\n' '$@';
-	@printf '\n'
-
 clean: 
-	${RM} ${OBJS} debog_exec debog_exec.dSYM
+	${RM} ${OBJS}
 	@$(PRINT_INTERLINE)
 	@printf '$(RED)$(BOLD)                              %s\ CLEANNING                       \n' '$(NAME)'
 	@$(PRINT_INTERLINE)

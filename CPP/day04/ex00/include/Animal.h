@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 17:19:30 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/22 16:02:14 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/21 14:26:51 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/21 16:28:31 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H
-#define BRAIN_H
-#include <iostream>
-#include <string>
+#ifndef ANIMAL_H
+#define ANIMAL_H
 
-class Brain
+#include <iostream>
+
+
+class Animal
 {
 public:
-    Brain();
-    virtual ~Brain();
-    Brain(Brain const & src); //Constructeur par copie
-    Brain & operator=(Brain const & src);//Assignation 
+    Animal();
+    virtual ~Animal();
+    Animal(Animal const & src); //Constructeur par copie
+    Animal & operator=(Animal const & src); //Assignation 
     
-
+    const std::string &getType(void) const;
+    virtual void    makeSound(void) const;
+    
 protected:
-    std::string *ideas[100];
+    std::string _type;
 
 };
 

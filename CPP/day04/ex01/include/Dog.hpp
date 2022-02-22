@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:26:46 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/22 11:01:04 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/22 15:49:54 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ public:
     Dog();
     virtual ~Dog();
     Dog(const Dog & src); //Constructeur par copie
-    virtual Dog &operator=(const Dog & src);
-    virtual Animal &operator=(const Animal & src); //Assignation     
+    Dog &operator=(const Dog & src);
+   // virtual Animal &operator=(const Animal & src); //Assignation     
     
-    virtual void    makeSound(void) const;
-    virtual Brain *get_brain(void) const;
+    void    makeSound(void) const;
+    Brain *get_brain(void) const;
 
 
 private:

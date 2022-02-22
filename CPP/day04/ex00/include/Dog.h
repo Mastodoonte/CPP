@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 17:19:30 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/22 16:02:14 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/21 14:26:46 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/21 15:35:13 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H
-#define BRAIN_H
-#include <iostream>
-#include <string>
+#ifndef DOG_H
+#define DOG_H
 
-class Brain
+#include "Animal.h"
+
+class Dog : public Animal
 {
 public:
-    Brain();
-    virtual ~Brain();
-    Brain(Brain const & src); //Constructeur par copie
-    Brain & operator=(Brain const & src);//Assignation 
+    Dog();
+    ~Dog();
+    Dog(const Dog & src); //Constructeur par copie
+    Dog & operator=(Dog const & src); //Assignation 
     
+    virtual void    makeSound(void) const;
 
-protected:
-    std::string *ideas[100];
+
+private:
 
 };
 

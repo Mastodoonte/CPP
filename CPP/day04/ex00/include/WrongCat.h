@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 17:19:30 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/22 16:02:14 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/21 14:28:27 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/21 16:43:13 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H
-#define BRAIN_H
-#include <iostream>
-#include <string>
+#ifndef WRONGCAT_H
+#define WRONGCAT_H
 
-class Brain
+#include "WrongAnimal.h"
+
+class WrongCat : public WrongAnimal
 {
 public:
-    Brain();
-    virtual ~Brain();
-    Brain(Brain const & src); //Constructeur par copie
-    Brain & operator=(Brain const & src);//Assignation 
-    
+    WrongCat(void);
+    ~WrongCat();
+    WrongCat(const WrongCat & src); //Constructeur par copie
+    WrongCat & operator=(WrongCat const & src); //Assignation 
 
-protected:
-    std::string *ideas[100];
+    void    makeSound(void) const;
+
+private:
 
 };
 
