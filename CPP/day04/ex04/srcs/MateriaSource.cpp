@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:26:51 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/24 09:59:24 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/24 10:30:54 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/24 10:43:51 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#include "../include/MateriaSource.hpp"
 
-#include <iostream>
-#include "Brain.hpp"
-
-
-class Animal
+MateriaSource::MateriaSource()
 {
-public:
-    Animal();
-    virtual ~Animal();
-    Animal(Animal const & src); //Constructeur par copie
-    Animal & operator=(Animal const & src); //Assignation 
-    
-    const std::string &getType(void) const;
-    virtual void    makeSound(void) const;
-    
-protected:
-    std::string _type;
+  std::cout << "Constructor MateriaSource" << std::endl;
+}
 
-};
+MateriaSource::~MateriaSource()
+{
+  std::cout << "Destructor MateriaSource" << std::endl;
+}
 
-#endif
+MateriaSource::MateriaSource(MateriaSource const & src)
+{
+  *this = src;
+}
+
+MateriaSource & MateriaSource::operator=(MateriaSource const & src)
+{
+  *this = src;
+  return (*this);
+}

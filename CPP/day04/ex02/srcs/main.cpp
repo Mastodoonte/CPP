@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:26:51 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/24 09:59:24 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/21 14:14:22 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/24 10:10:36 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#include "../include/Animal.hpp"
+#include "../include/Dog.hpp"
+#include "../include/Cat.hpp"
 
-#include <iostream>
-#include "Brain.hpp"
-
-
-class Animal
+int main(void)
 {
-public:
-    Animal();
-    virtual ~Animal();
-    Animal(Animal const & src); //Constructeur par copie
-    Animal & operator=(Animal const & src); //Assignation 
+    std::cout << "[ The animal class can not be instantiate ]" <<  std::endl << std::endl;
+  //  Animal test1;
+    Cat test3;
+    return (0);
     
-    const std::string &getType(void) const;
-    virtual void    makeSound(void) const;
+}
     
-protected:
-    std::string _type;
-
-};
-
-#endif
