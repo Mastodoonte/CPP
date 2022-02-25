@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 10:46:34 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/24 10:47:33 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/25 17:15:43 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,31 @@
 #define CHARACTER_H
 #include <iostream>
 #include <string>
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class Character
+
+class Character : public ICharacter
 {
 public:
-    Character();
+    Character(const std::string &name);
     ~Character();
-    Character(Character const & src); //Constructeur par copie
+    Character(const Character & src); //Constructeur par copie
     Character & operator=(Character const & src); //Assignation 
-    virtual ~ICharacter() {}
-    virtual std::string const & getName() const = 0;
-    virtual void equip(AMateria* m) = 0;
-    virtual void unequip(int idx) = 0;
-    virtual void use(int idx, ICharacter& target) = 0;
+    
+   // virtual ~ICharacter() {}
+    virtual std::string const   &getName() const;
+    virtual void                equip(AMateria* m);
+    virtual void                unequip(int idx);
+    virtual void                use(int idx, ICharacter& target);
+    virtual void                display_inventory() const;
 
 private:
+    Character();
+    unsigned int _nbItem;
+    std::string     _name;
+    AMateria        *_itemsTab[4];
+   // int             _nb;
 
 };
 

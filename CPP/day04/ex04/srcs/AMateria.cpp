@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ImateriaSource.cpp                                 :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 10:21:23 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/24 10:30:12 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/25 13:58:55 by florianmast       #+#    #+#             */
+/*   Updated: 2022/02/25 18:15:10 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ImateriaSource.hpp"
+#include "../include/AMateria.hpp"
 
-IMateriaSource::IMateriaSource()
+AMateria::AMateria(const std::string &type) 
 {
-  std::cout << "Constructor ImateriaSource" << std::endl;
+    _item = type;
+    std::cout << "Amateria constructor called" << std::endl;
 }
 
-IMateriaSource::~IMateriaSource()
+AMateria::~AMateria()
 {
-    std::cout << "Destructor IMateriaSource" << std::endl;
+    ;
 }
 
-IMateriaSource::IMateriaSource(IMateriaSource const & src)
+AMateria::AMateria(AMateria const &src)
 {
-  *this = src;
+    *this = src;
 }
 
-IMateriaSource & IMateriaSource::operator=(IMateriaSource const & src)
+const std::string	&AMateria::getType( void ) const
 {
-  *this = src;
-  return (*this);
+	return this->_item;
 }

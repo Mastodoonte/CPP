@@ -12,10 +12,11 @@ PRINT_INTERLINE = printf '$(GREEN)$(BOLD)=======================================
 PRINT_INTERLINE_N = printf '$(YELLOW)$(BOLD)================================================================================$(ESC_STOP)\n'
 
 SRCS	= 	srcs/main.cpp \
-			srcs/Dog.cpp \
-			srcs/Cat.cpp \
-			srcs/Animal.cpp \
-			srcs/Brain.cpp 
+			srcs/AMateria.cpp \
+			srcs/Cure.cpp \
+			srcs/Ice.cpp \
+			srcs/Character.cpp \
+			srcs/MateriaSource.cpp
 
  		
 ########################################################################################################################################
