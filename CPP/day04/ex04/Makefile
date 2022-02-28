@@ -27,7 +27,7 @@ HEADER	= include/
 
 NAME = a.out
 
-CLANG = c++ -g
+CLANG = c++ 
 
 C++FLAGS =  -Wall -Werror -Wextra -pedantic -g
 
@@ -61,7 +61,7 @@ $(NAME): $(OBJS)
 	@printf '\n'
 
 %.o : %.c
-	$(CLANG) $(CFLAGS) -I $(HEADER) -c $< -o $@
+	$(CLANG) $(C++FLAGS) -I $(HEADER) -c $< -o $@
 
 debug:
 	@g++ -g ${SRCS} -Wall -Werror -Wextra -o debog_exec

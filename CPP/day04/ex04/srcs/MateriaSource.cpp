@@ -6,17 +6,17 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:49:55 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/25 18:35:06 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/28 10:51:41 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/MateriaSource.hpp"
 
-MateriaSource::MateriaSource()
+MateriaSource::MateriaSource() 
 {
   int i = 0;
     
-  _learned = 0;
+  this->_learned = 0;
   while (i < 4)
   {
     this->_materia[i] = NULL;
@@ -33,6 +33,7 @@ MateriaSource::~MateriaSource()
   {
     if (this->_materia[i])
       delete this->_materia[i];
+    i++;
   }
   std::cout << "Destructor of MateriaSource called" << std::endl;
 }
@@ -43,26 +44,22 @@ MateriaSource::MateriaSource( const MateriaSource &src)
 std::cout << "Copy construction of MateriaSource called" << std::endl;
 }
 
-MateriaSource & MateriaSource::operator=(const MateriaSource &src)
+MateriaSource &MateriaSource::operator=(const MateriaSource &src)
 {
   int i = 0;
- // this->_nbItem = 0;
   while (i < 4)
   {
     if (this->_materia[i])
-    {
       delete _materia[i];
-    }
     if (src._materia[i])
-    {
       this->_materia[i] = src._materia[i]->clone();
-    }
     else
-    {
       this->_materia[i] = NULL;
-    }
+    i++;
   }
   std::cout << "Assignation constructor of operator called" << std::endl;
+  return (*this);
+  
 }
 
 void MateriaSource::learnMateria(AMateria* materiaToLearn)
@@ -77,13 +74,14 @@ void MateriaSource::learnMateria(AMateria* materiaToLearn)
 	}
 }
 
-AMateria*  MateriaSource::createMateria(std::string const & type)
+AMateria *MateriaSource::createMateria(std::string const &type)
 {
   int i = 0;
   while (i < 4)
   {
     if (type == this->_materia[i]->getType())
       return this->_materia[i]->clone();
+    i++;
   }
   return (NULL);
 }

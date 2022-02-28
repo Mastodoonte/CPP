@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:00:34 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/25 15:14:21 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/25 18:47:29 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
-#include "Character.hpp"
 
 /*Implémentez les Materias Ice (glace) et Cure (soin) sous forme de classes concrètes. 
 Utilisez leur noms en minuscules ("ice" pour Ice, "cure" pour Cure) comme types. 

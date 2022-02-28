@@ -6,13 +6,13 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:01:07 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/25 17:19:56 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/28 11:58:04 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Cure.hpp"
 
-Cure::Cure( void ) : AMateria("Cure")
+Cure::Cure( void ) : AMateria("cure")
 {
   std::cout << "Default constructor of Cure" << std::endl;
 }
@@ -22,13 +22,13 @@ Cure::~Cure()
   std::cout << "Destructor of Cure" << std::endl;
 }
 
-Cure::Cure(Cure const & src) : AMateria("Cure")
+Cure::Cure(Cure const & src) : AMateria("cure")
 {
   *this = src;
   std::cout << "Constructor by copy initialised" << std::endl;
 }
 
-Cure & Cure::operator=(Cure const & src)
+Cure &Cure::operator=(Cure const & src)
 {
   this->_item = src._item;
   std::cout << "Assignation operator for class Cure is called" << std::endl;

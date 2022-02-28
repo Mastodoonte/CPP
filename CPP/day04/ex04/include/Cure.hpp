@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:01:14 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/25 15:42:40 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/28 10:25:50 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CURE_H
 #include <iostream>
 #include <string>
-#include "Amateria.hpp"
+#include "AMateria.hpp"
 
 /*Implémentez les Materias Ice (glace) et Cure (soin) sous forme de classes concrètes. 
 Utilisez leur noms en minuscules ("ice" pour Ice, "cure" pour Cure) comme types. 
@@ -26,12 +26,12 @@ class Cure : public AMateria
 public:
     Cure();
     ~Cure();
-    Cure(Cure const & src);                       //Constructeur par copie
+    Cure(Cure const &src);                       //Constructeur par copie
     Cure &operator=(Cure const &src);             //Assignation 
 
     virtual AMateria *clone() const;        // From the abstract class AMateria
-    
     virtual void use(ICharacter &target);
+    
 private:
 
 };

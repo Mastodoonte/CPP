@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:49:36 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/25 18:28:33 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/28 10:34:47 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #define MATERIASOURCE_H
 #include <iostream>
 #include <string>
-#include "AMateria.hpp"
 
-# include "IMateriaSource.hpp"
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource
 {
@@ -27,8 +27,8 @@ public:
     MateriaSource(const MateriaSource &src); //Constructeur par copie
     MateriaSource &operator=(const MateriaSource &src); //Assignation 
 
-    virtual void learnMateria(AMateria*);
-    virtual AMateria* createMateria(std::string const & type);
+    virtual void learnMateria(AMateria* materialToLearn);
+    virtual AMateria* createMateria(std::string const &type);
 
 private:
     AMateria    *_materia[4];

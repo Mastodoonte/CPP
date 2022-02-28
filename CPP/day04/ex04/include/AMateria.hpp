@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:58:50 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/25 16:32:15 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/28 09:52:12 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ class AMateria
 {
 public:
     AMateria(const std::string &type);              //Constructeur Unique with string
-    virtual ~AMateria();    
-    AMateria(AMateria const & src);                 //Constructeur par copie
-    AMateria &operator=(AMateria const & src);     //Assignation 
+    virtual ~AMateria(){};    
+ //   AMateria(AMateria const & src);                 //Constructeur par copie
+   // AMateria &operator=(AMateria const & src);     //Assignation 
     
-    const std::string &getType() const;            //Returns the materia type
+    const std::string &getType(void) const;            //Returns the materia type
     
-    virtual AMateria *clone() const = 0;            /*Make a abstract class and all classes inherited 
+    virtual AMateria *clone(void) const = 0;            /*Make a abstract class and all classes inherited 
                                                      needs this clone method it is Pure virtual function. */
     
     virtual void use(ICharacter& target) = 0;       // Same than clone

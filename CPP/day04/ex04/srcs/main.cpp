@@ -6,15 +6,12 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 10:18:56 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/25 18:35:59 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/28 10:41:38 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/MateriaSource.hpp"
-#include "../include/IMateriaSource.hpp"
 #include "../include/Character.hpp"
-#include "../include/ICharacter.hpp"
-#include "../include/Amateria.hpp"
 #include "../include/Ice.hpp"
 #include "../include/Cure.hpp"
 
