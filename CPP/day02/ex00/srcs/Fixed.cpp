@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:30:47 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/14 14:40:31 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/24 11:16:14 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ Fixed::~Fixed(void)
 
 Fixed::Fixed(const Fixed &src )
 {
-   std::cout << "=>>>>>Copy constructor called" << std::endl;
+   std::cout << "Copy constructor called" << std::endl;
   *this = src;
 }
 
 //l'initialisation se trouve dans la declaration pour une copy construction
 Fixed &Fixed::operator=( Fixed const &src ) //assignation 
 {
-  std::cout << "=>> assignationCopy assignment called" << std::endl;
+  std::cout << "assignation Copy assignment called" << std::endl;
   this->_integer_fixed = src.getRawBits();
   return (*this);
 }

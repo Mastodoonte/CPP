@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:42:09 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/18 11:25:56 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/02/24 11:17:50 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ private:
     int              _integer_fixed;
 };
 
-std::ostream &  operator<<( std::ostream & o, Fixed const & i);
+//std::ostream &  operator<<( std::ostream & o, Fixed const & i);
 
 #endif
