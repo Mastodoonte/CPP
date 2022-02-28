@@ -6,7 +6,7 @@
 #    By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 15:00:08 by florianmast       #+#    #+#              #
-#    Updated: 2022/02/08 15:00:09 by florianmast      ###   ########.fr        #
+#    Updated: 2022/02/24 17:34:19 by flmastor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,13 +29,12 @@ SRCS	= 	srcs/getteur_setter.cpp \
 ########################################################################################################################################
 OBJS = ${SRCS:.cpp=.o}
 
-CLANG = clang++
 
 HEADER	= include
 
 NAME = phonebook
 
-CLANG = clang++
+CLANG = c++
 
 C++FLAGS =  -Wall -Werror -Wextra -std=c++98 -pedantic -g
 
@@ -45,7 +44,7 @@ RM = rm -f
 all: ${NAME}
 
 $(NAME): $(OBJS)
-	@$(CLANG) $(CFLAGS) -I $(HEADER) -o $(NAME) $(OBJS)
+	@$(CLANG) $(C++FLAGS) -I $(HEADER) -o $(NAME) $(OBJS)
 	@$(PRINT_INTERLINE)
 	@printf '$(YELLOW)executable name: $(BOLD)%s$(ESC_STOP)\n' '$(NAME)';
 	@printf '$(YELLOW)compiler:$(ESC_STOP) %s\n' '$(CXX)'; 

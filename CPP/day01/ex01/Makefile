@@ -18,13 +18,12 @@ SRCS	= 	srcs/Zombie.cpp \
 ########################################################################################################################################
 OBJS = ${SRCS:.cpp=.o}
 
-CLANG = clang++
 
 HEADER	= include
 
 NAME = More_Brainz
 
-CLANG = clang++
+CLANG = c++
 
 C++FLAGS =  -std=c11 -Wall -Werror -Wextra -std=c++98 -pedantic -ggdb3
 
