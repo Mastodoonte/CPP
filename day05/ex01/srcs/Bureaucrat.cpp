@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:06:17 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/02 09:47:34 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/02 10:16:51 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Bureaucrat::Bureaucrat(std::string name, int rank) : _name(name)
 {
   if (rank > 150)
     throw GradeTooLowException(); 
-  else if (rank < 1)
+  else if (rank < 0)
      throw GradeTooHighException();
   else
   {
@@ -47,15 +47,15 @@ std::string Bureaucrat::getName(void) const
   return (this->_name);
 }
 
-std::string Bureaucrat::getGrade(void) const
+int Bureaucrat::getGrade(void) const
 {
-  return (std::to_string(this->_rank));
+  return ((this->_rank));
 }
 
 void    Bureaucrat::incrementB(void)
 {
   std::cout << "Function of incrementation has been called for " << this->getName() << std::endl;
-  if (this->_rank == 1)
+  if (this->_rank == 0)
   {
     throw GradeTooHighException();
   }
@@ -84,4 +84,18 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat const &src)
 {
   o << src.getName() << " bureaucrat grade " << src.getGrade() << std::endl;
   return (o);
+}
+
+
+void    Bureaucrat::signForm(Form &form)
+{
+  try
+  {
+     form.beSigned(*this);
+  }
+  catch(const std::exception& exeption)
+  {
+    std::cerr << this->_name << " can't because ";
+    std::cerr << exeption.what() << std::endl;
+  }
 }

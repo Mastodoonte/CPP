@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/01 13:57:45 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/01 15:00:31 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main(void)
     }
     catch(const std::exception& exeption)
     {
-        std::cerr << exeption.what() << '\n';
+        std::cerr << exeption.what() << std::endl;
     }
     //==================================================================//
     
@@ -54,9 +54,9 @@ int main(void)
         std::cout << "[ Increment ]" << std::endl;
         test2.incrementB();
     }
-    catch(const std::exception& e)
+    catch(const std::exception& expetion)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << expetion.what() << std::endl;
     }
     std::cout << test2 << std::endl;
  //==================================================================//
@@ -67,9 +67,9 @@ int main(void)
         std::cout << "[ Decrement ]" << std::endl;
         test3.decrementB();
     }
-    catch(const std::exception& e)
+    catch(const std::exception& exeption)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << exeption.what() << std::endl;
     }
     std::cout << test3 << std::endl;
     std::cout << std::endl <<  "[-- DESTRUCTION --]" << std::endl;
