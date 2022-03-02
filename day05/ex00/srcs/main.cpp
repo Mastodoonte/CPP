@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/01 15:00:31 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/02 10:28:22 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int main(void)
     std::cout << std::endl <<  "[-- TEST WITH ERROR --]" << std::endl;
     try
     {
-         std::cout << "[ first error init with -1]" << std::endl;
-         Bureaucrat test1("CHIEF", -1);
+         std::cout << "[ first error init with 0]" << std::endl;
+         Bureaucrat test1("CHIEF", 0);
     }
     catch(const std::exception& exeption)
     {
@@ -48,7 +48,7 @@ int main(void)
     //==================================================================//
     
     std::cout << std::endl << "[-- TEST OF NORMAL NUMER 0 --]" << std::endl;
-    Bureaucrat test2("CHIEF", 0);
+    Bureaucrat test2("CHIEF", 1);
     try
     {
         std::cout << "[ Increment ]" << std::endl;
