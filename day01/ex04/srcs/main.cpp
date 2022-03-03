@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:08:35 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/16 12:21:40 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/02 16:42:51 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int main(int ac, char **av)
             std::cout << "error: file doesn't exist/ is empty/  or do not have the good permissions" << std::endl;
             return (1);
         }
-        
         old_name = av[1];
         std::ofstream end_fd(old_name + ".replace");
         if (end_fd.fail())

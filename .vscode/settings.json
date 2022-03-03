@@ -63,7 +63,8 @@
         "iomanip": "cpp",
         "deque": "cpp",
         "fstream": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "filesystem": "cpp"
     },
     "cpp.creator.headerFileContentPreset": "#ifndef {{*CLASSNAMEUPPER*}}_H\n#define {{*CLASSNAMEUPPER*}}_H\n\n#pragma once\n\nclass {{*CLASSNAME*}}\n{\npublic:\n    {{*CLASSNAME*}}();\n    ~{{*CLASSNAME*}}();\n    {{*CLASSNAME*}}(CLASSNAME* const & src);  //Constructeur par copie\n   \n\n\nprivate:\n\n};\n\n#endif",
     "terminal.integrated.commandsToSkipShell": [

@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 15:37:02 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/02 11:05:48 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/03 13:16:26 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,46 @@
 
 #include <iostream>
 #include <string>
+
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
 class Form
 {
-    public:
-        Form(std::string name ,int rankToSign, int rankToExec);
-        virtual ~Form();
-        Form(Form const &src);  //Constructeur par copie
-        Form &operator=(const Form &src);
-    
-    //Petit rappel sur les getter => const avant declaration signifie que la valeur ne sera pas changeable à partir de son moment de creation et evite mais évite une copie inutile de l'objet (optimisation)
-    //de ce fait il implique que nous renvoyons une reference sur un objet et que la declaration ne peut se faire dans la fonction 
-    // Celui à la fin que la fonction ne modifiera aucune variable into the function 
-        std::string getName(void) const;
-        bool        getIfSigned(void)const;
-        int         getIfRankToSigned(void) const;
-        int         getIfRankToExec(void) const;
-        void				              beSigned(Bureaucrat const &person);
-
-
-private:
+    protected:
         std::string _name;
         bool        _signed;
         int         _rankToSign;
         int         _rankToExec;
-        Form(){};
+        std::string _target;
+        
+    public:
+        Form();
+        Form(std::string name ,int rankToSign, int rankToExec, std::string target);
+        virtual ~Form();
+        Form(Form const &src);
+        Form &operator=(const Form &src);
+    
+        std::string getName(void) const;
+        std::string	getTarget(void) const;
+        void        setTarget(std::string target);
+        bool        getIfSigned(void)const;
+        int         getIfRankToSigned(void) const;
+        int         getIfRankToExec(void) const;
+        
+        void        beSigned(Bureaucrat const &person);
+        void	execute(Bureaucrat const &executor) const;
+        
+        void	openable(std::ofstream  &end_fd);
+        virtual void	ft_do() const = 0;
+
         
     struct GradeTooHighException: public std::exception
     {
         virtual const char* what() const throw() 
         {
-            return ("His grade is too high for this form ");
+            return ("His grade is too high for this form");
         }
     };
     
@@ -56,7 +62,7 @@ private:
     {
         virtual const char* what() const throw() 
         {
-            return ("His grade is too Low for this form ");
+            return ("His grade is too Low for this form");
         }
     };
     
@@ -64,7 +70,7 @@ private:
     {
         virtual const char* what() const throw() 
         {
-            return ("this form is signed ");
+            return ("this form is signed");
         }
     };
     
@@ -72,7 +78,7 @@ private:
     {
         virtual const char* what() const throw() 
         {
-            return ("This form is not signed ");
+            return ("This form is not signed");
         }
     };
 };

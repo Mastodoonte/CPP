@@ -6,13 +6,19 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/02 11:52:10 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/03 12:22:20 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Form.hpp"
+#include <fstream>
 
-Form::Form(std::string name, int rankToSign, int rankToExec) : _name(name), _signed(false)
+Form::Form() : _name("No_name"), _signed(false), _rankToSign(150), _rankToExec(150), _target("No_name_target")
+{
+  std::cout << "Default contructor of Form" << std::endl;
+}
+
+Form::Form(std::string name, int rankToSign, int rankToExec, std::string target) : _name(name), _signed(false), _target(target)
 {
   if (rankToExec < 1 || rankToSign < 1)
     throw Form::GradeTooHighException();
@@ -57,6 +63,15 @@ std::string Form::getName(void) const
   return (this->_name);
 }
 
+std::string		Form::getTarget(void) const
+{
+  return (this->_target);
+}
+
+void        Form::setTarget(std::string target)
+{
+  this->_target = target;
+}
 bool        Form::getIfSigned(void) const
 {
   return (this->_signed);
@@ -105,4 +120,18 @@ std::ostream &operator<<(std::ostream &o, Form const &src)
   o << "       " << src.getIfRankToExec() << "       " << std::endl ;
   o << "|==================|" << std::endl << std::endl;
   return (o);
+}
+
+void		Form::execute(Bureaucrat const &executor) const
+{
+	if (this->_signed == false)
+  {
+		throw Form::FormIsNotSigned();
+  }
+	else if (executor.getGrade() > this->_rankToExec)
+  {
+  		throw Form::GradeTooLowException();
+  }
+  else
+    ft_do();
 }

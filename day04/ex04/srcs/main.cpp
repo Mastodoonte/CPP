@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 10:18:56 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/28 15:15:07 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/03 14:31:26 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 *
 *
 *
-*/
+*/ 
+//TODO REVOIR LE MAIN 
 
 int main() 
 {
