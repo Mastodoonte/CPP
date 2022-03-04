@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 12:18:38 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 14:09:21 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 
 void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
+  (void)executor;
   std::cout << "Presidentation pardon form called" << std::endl;
   std::cout <<  this->getTarget() << " is being forgiven by our dear Zaphod Beeblebrox" << std::endl;
 }

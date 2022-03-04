@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 12:16:19 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 14:09:31 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm  const &
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
+  (void)executor;
   int ret = rand();
   std::cout << "Robot request form called" << std::endl;
   std::cout  << " BRAAAAAAAAAAAAAAAAAAAAAAAH" << std::endl;

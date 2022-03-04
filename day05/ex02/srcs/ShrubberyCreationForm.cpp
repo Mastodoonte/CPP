@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 12:18:15 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 14:09:40 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm  c
 //c_str put null terminated at the end
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+  (void)executor;
   std::ofstream	fd;
   
  // fd.open((this->getTarget() + "_shrubbery").c_str(), std::ofstream::app); (append)
