@@ -3,26 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/02 11:52:10 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 19:32:15 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Form.hpp"
 
-Form::Form(std::string name, int rankToSign, int rankToExec) : _name(name), _signed(false)
+
+Form::Form(void) : _name("no_name"), _signed(false),_rankToSign(150) , _rankToExec(150)
+{
+  std::cout << "Constructor of Form: " << _name << " with rank to signe at : " << _rankToSign << " with rank to execute at "
+  << _rankToExec << std::endl; 
+}
+Form::Form(std::string name, int rankToSign, int rankToExec) : _name(name), _signed(false), _rankToSign(rankToExec), _rankToExec(rankToExec)
 {
   if (rankToExec < 1 || rankToSign < 1)
-    throw Form::GradeTooHighException();
-  else if (rankToExec > 150 || rankToSign > 150)
     throw Form::GradeTooLowException();
+  else if (rankToExec > 150 || rankToSign > 150)
+    throw Form::GradeTooHighException();
   else
-  {
-    _rankToSign = rankToSign;
-     _rankToExec = rankToExec;
-  }
     std::cout << "Constructor of Form: " << _name << " with rank to signe at : " << _rankToSign << " with rank to execute at "
     << _rankToExec << std::endl; 
 }
@@ -32,21 +34,13 @@ Form::~Form()
   std::cout << "Destructor of Form: " << _name << std::endl; 
 }
 
-Form::Form(const Form &src)
+Form::Form(const Form &src) : _name(src.getName()), _signed(src.getIfSigned()), _rankToSign(src.getIfRankToSigned()), _rankToExec(src.getIfRankToExec())
 {
-  this->_name =src._name;
-  this->_rankToExec = src._rankToExec;
-  this->_rankToSign = src._rankToSign;
-  this->_signed = src._signed;
-  std::cout << "Copy constructor called for: " << _name << std::endl; 
-  
+  std::cout << "Copy constructor called for: " << _name << std::endl;
 }
 
 Form & Form::operator=(Form const &src)
 {
-  this->_name = src._name;
-  this->_rankToExec = src._rankToExec;
-  this->_rankToSign = src._rankToSign;
   this->_signed = src._signed;
   std::cout << "Assignation operator for:  " << _name << std::endl; 
   return (*this);
@@ -72,7 +66,7 @@ int         Form::getIfRankToExec(void) const
   return (this->_rankToExec);
 }
 
-/*e beSigned() prenant un Bureaucrat en paramètre. 
+/* beSigned() prenant un Bureaucrat en paramètre. 
 Il doit changer le status du formulaire en signé si l’échelon du Bureaucrat
 est suffisant (supérieur ou égal à l’échelon requis).*/
 void    Form::beSigned(Bureaucrat const &person)
@@ -88,7 +82,7 @@ void    Form::beSigned(Bureaucrat const &person)
   else
   {
     this->_signed = true;
-    std::cout << person.getName() << " sign " << this->getName() << std::endl;
+    std::cout << person.getName() << " signed " << this->getName() << std::endl;
   }
 }
 

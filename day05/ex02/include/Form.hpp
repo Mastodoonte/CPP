@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 15:37:02 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 12:14:34 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 19:58:05 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Bureaucrat;
 class Form
 {
     protected:
-        std::string _name;
-        bool        _signed;
-        int         _rankToSign;
-        int         _rankToExec;
-        std::string _target;
+        const std::string   _name;
+        bool                _signed;
+        const int           _rankToSign;
+        const int           _rankToExec;
+        std::string   _target;
         
     public:
         Form();

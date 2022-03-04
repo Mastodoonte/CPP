@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:09:13 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/01 13:57:58 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 18:26:00 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ private:
 /*
  *Nous pouvons définir nos propres exceptions en héritant et en surchargeant 
     La fonctionnalité de la classe exception. l'implentation suivante  
-    montre comment on pouvez utiliser la classe std::exception pour implémenter 
-    notre propre exception et gestion d'erreur de manière standard.
+    montre comment on peut utiliser la classe std::exception pour implémenter 
+    notre propre exception et la gestion d'erreur de manière standard.
 
  * Le choix de struct permet d'eviter de specifier le "public" 
 
  *Ici, what() est une méthode publique fournie par la classe exception et elle a 
     été surchargée par toutes les classes exception enfant. Elle renvoie la cause d'une exception.
  
- *Le retour virtual const char est un pointeur permet de preciser le message d'erreur attaché à l'exeption   */
+ *Le retour virtual const char est un pointeur qui permet de preciser le message d'erreur attaché à l'exeption   */
 class GradeTooHighException: public std::exception
 {
       virtual const char* what() const throw() 

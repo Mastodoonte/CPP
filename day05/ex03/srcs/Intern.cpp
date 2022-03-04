@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 14:05:21 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 20:34:56 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ Form*	Intern::makeForm(std::string formname, std::string target)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << "Intern FAILED to create <" << formname << "> form (seems that is doesn't exist" << std::endl << std::endl;
+	std::cout << "Intern FAILED to create <" << formname << "> form (seems that is doesn't exist)" << std::endl << std::endl;
 	return (NULL);
 }

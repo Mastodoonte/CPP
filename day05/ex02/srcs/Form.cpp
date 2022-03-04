@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 12:18:00 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 19:57:48 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,14 @@ Form::Form() : _name("No_name"), _signed(false), _rankToSign(150), _rankToExec(1
   std::cout << "Default contructor of Form" << std::endl;
 }
 
-Form::Form(std::string name, int rankToSign, int rankToExec, std::string target) : _name(name), _signed(false), _target(target)
+Form::Form(std::string name, int rankToSign, int rankToExec, std::string target) :
+ _name(name), _signed(false), _rankToSign(rankToExec), _rankToExec(rankToExec), _target(target)
 {
   if (rankToExec < 1 || rankToSign < 1)
     throw Form::GradeTooHighException();
   else if (rankToExec > 150 || rankToSign > 150)
     throw Form::GradeTooLowException();
   else
-  {
-    _rankToSign = rankToSign;
-     _rankToExec = rankToExec;
-  }
     std::cout << "Constructor of Form: " << _name << " with rank needed for a firm : : " << _rankToSign << " with rank to execute at : "
     << _rankToExec << std::endl; 
 }
@@ -38,21 +35,14 @@ Form::~Form()
   std::cout << "Destructor of Form: " << _name << std::endl; 
 }
 
-Form::Form(const Form &src)
+Form::Form(const Form &src) :
+_name(src.getName()), _signed(src.getIfSigned()), _rankToSign(src.getIfRankToSigned()), _rankToExec(src.getIfRankToExec()), _target(getTarget())
 {
-  this->_name =src._name;
-  this->_rankToExec = src._rankToExec;
-  this->_rankToSign = src._rankToSign;
-  this->_signed = src._signed;
   std::cout << "Copy constructor called for: " << _name << std::endl; 
-  
 }
 
 Form & Form::operator=(Form const &src)
 {
-  this->_name = src._name;
-  this->_rankToExec = src._rankToExec;
-  this->_rankToSign = src._rankToSign;
   this->_signed = src._signed;
   std::cout << "Assignation operator for:  " << _name << std::endl; 
   return (*this);

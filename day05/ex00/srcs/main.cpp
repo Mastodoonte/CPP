@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/02 10:28:22 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 18:28:47 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main(void)
     }
     //==================================================================//
     
-    std::cout << std::endl << "[-- TEST OF NORMAL NUMER 0 --]" << std::endl;
+    std::cout << std::endl << "[-- TEST OF NORMAL NUMER 1 --]" << std::endl;
     Bureaucrat test2("CHIEF", 1);
     try
     {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:06:17 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/02 11:50:14 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 19:32:26 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 Bureaucrat::Bureaucrat(std::string name, int rank) : _name(name)
 {
   if (rank > 150)
-    throw GradeTooLowException(); 
+    throw Bureaucrat::GradeTooLowException(); 
   else if (rank < 0)
-     throw GradeTooHighException();
+     throw Bureaucrat::GradeTooHighException();
   else
   {
     _rank = rank;
@@ -57,7 +57,7 @@ void    Bureaucrat::incrementB(void)
   std::cout << "Function of incrementation has been called for " << this->getName() << std::endl;
   if (this->_rank == 0)
   {
-    throw GradeTooHighException();
+    throw Bureaucrat::GradeTooHighException();
   }
   else
   {
@@ -71,7 +71,7 @@ void    Bureaucrat::decrementB(void)
   std::cout << "Function of decrementation has been called for " << this->getName() << std::endl;
   if (this->_rank == 150)
   {
-    throw GradeTooLowException();
+    throw Bureaucrat::GradeTooLowException();
   }
   else
   {
@@ -98,5 +98,5 @@ void    Bureaucrat::signForm(Form &form)
     std::cerr << this->_name << " couldn't sign " << form.getName() << " because ";
     std::cerr << exeption.what() << std::endl;
   }
- // std::cout << this->_name << " sign " << form.getName() << std::endl;
+ // std::cout << this->_name << " signed " << form.getName() << std::endl;
 }
