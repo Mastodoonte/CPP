@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:27:30 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/03 13:16:10 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 13:50:49 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
     ~RobotomyRequestForm();
     RobotomyRequestForm(RobotomyRequestForm const &src);  //Constructeur par copie
     RobotomyRequestForm &operator=(RobotomyRequestForm const &src);
-    void    ft_do() const;
+    void	execute(Bureaucrat const &executor) const;
    
 
 

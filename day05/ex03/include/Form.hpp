@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 15:37:02 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/03 13:16:26 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 13:52:29 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,9 @@ class Form
         int         getIfRankToExec(void) const;
         
         void        beSigned(Bureaucrat const &person);
-        void	execute(Bureaucrat const &executor) const;
+        virtual void	execute(Bureaucrat const &executor) const = 0;
         
         void	openable(std::ofstream  &end_fd);
-        virtual void	ft_do() const = 0;
 
         
     struct GradeTooHighException: public std::exception

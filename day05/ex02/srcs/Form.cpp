@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/03 12:22:20 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 12:18:00 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Form::Form(std::string name, int rankToSign, int rankToExec, std::string target)
     _rankToSign = rankToSign;
      _rankToExec = rankToExec;
   }
-    std::cout << "Constructor of Form: " << _name << " with rank to signe at : " << _rankToSign << " with rank to execute at "
+    std::cout << "Constructor of Form: " << _name << " with rank needed for a firm : : " << _rankToSign << " with rank to execute at : "
     << _rankToExec << std::endl; 
 }
 
@@ -133,5 +133,5 @@ void		Form::execute(Bureaucrat const &executor) const
   		throw Form::GradeTooLowException();
   }
   else
-    ft_do();
+    execute(executor);
 }

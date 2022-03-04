@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/03 14:27:44 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 14:05:21 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 Intern::Intern()
 {
-  std::cout << "Construction of "  << std::endl;
+  std::cout << "Construction of Intern"  << std::endl;
 }
 
 Intern::~Intern()
 {
-
   std::cout << "Destruction of Intern" << std::endl;
 }
 
@@ -52,23 +51,35 @@ Form*	Intern::makePardon(std::string target)
 {
 	return (new PresidentialPardonForm(target));
 }
-typedef Form* (Intern::*formMaker) (std::string target);
 
-Form*	Intern::makeForm(std::string fname, std::string target)
+Form*	Intern::makeForm(std::string formname, std::string target)
 {
-	Form*		form;
-	std::string	index		[3] = {"Shrubbery Creation",	"Robotomy Request",		"Presidential Pardon"};
-	formMaker	templates	[3] = {&Intern::makeShrubbery,	&Intern::makeRobotomy,	&Intern::makePardon};
-
-	for (int i = 0; i < 3; i++)
+	std::string	index [3] = {"ShrubberyCreationForm",	"RobotomyRequestForm", "PresidentialPardonForm"};
+	try
 	{
-		if (fname == index[i])
 		{
-			form = (this->*templates[i]) (target);
-			std::cout << "Intern SUCCEDED to create <" << index[i] << "> form." << std::endl << std::endl;
-			return(form);
+			int i = -1;
+			while (++i < 3)
+			{
+				if (formname == index[i])
+				{
+					std::cout << "Intern is creating the " << index[i] << ", thanks him !" << std::endl;
+					break;
+				}
+			}
+			switch (i)
+			{
+				case 0: return (new ShrubberyCreationForm(target));
+				case 1: return (new RobotomyRequestForm(target));
+				case 2: return (new PresidentialPardonForm(target));
+				case 3: throw NoMatchingException();
+			}
 		}
 	}
-	std::cout << "Intern FAILED to create <" << fname << "> form. It's not in the template index." << std::endl << std::endl;
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "Intern FAILED to create <" << formname << "> form (seems that is doesn't exist" << std::endl << std::endl;
 	return (NULL);
 }

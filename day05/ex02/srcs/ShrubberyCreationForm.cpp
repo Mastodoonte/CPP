@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/03 12:24:30 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 12:18:15 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm  c
 
 //https://asciiart.website//index.php?art=plants/trees//
 //c_str put null terminated at the end
-void	ShrubberyCreationForm::ft_do() const
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
   std::ofstream	fd;
   

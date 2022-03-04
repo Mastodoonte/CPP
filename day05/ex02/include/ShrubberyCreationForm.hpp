@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:31:33 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/03 10:59:38 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 12:16:46 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     ShrubberyCreationForm(const ShrubberyCreationForm &src);  //Constructeur par copie
     ShrubberyCreationForm &operator=(ShrubberyCreationForm const &src);
     
-    void	ft_do() const;
+    void	execute(Bureaucrat const &executor) const;
     //void			executeForm(Form &form);
     
     struct FormIsNotOpenable: public std::exception

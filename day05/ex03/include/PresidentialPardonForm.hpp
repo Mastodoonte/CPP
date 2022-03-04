@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:05:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/03 13:14:45 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 13:50:44 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
     ~PresidentialPardonForm();
     PresidentialPardonForm(PresidentialPardonForm const &src);
     PresidentialPardonForm &operator=(PresidentialPardonForm const &src);
-    void	ft_do() const;
+    void	execute(Bureaucrat const &executor) const;
    
 
 

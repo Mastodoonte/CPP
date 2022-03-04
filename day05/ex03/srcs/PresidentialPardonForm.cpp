@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/03 12:40:47 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 13:59:46 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 24, 5, "no_name_target") 
 {
-  std::cout << "Construction of " << this->getName()  << std::endl;
+  std::cout << "Construction of  " << this->getName()  << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 25, 5, target) 
@@ -45,8 +45,9 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 	return (*this);
 }
 
-void	PresidentialPardonForm::ft_do() const
+void	 PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
+  (void)executor;
   std::cout << "Presidentation pardon form called" << std::endl;
   std::cout << this->getTarget() << " is being forgiven by our dear Zaphod Beeblebrox" << std::endl;
 }

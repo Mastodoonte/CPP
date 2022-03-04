@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/03 12:22:20 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 13:53:03 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,5 @@ void		Form::execute(Bureaucrat const &executor) const
   		throw Form::GradeTooLowException();
   }
   else
-    ft_do();
+    execute(executor);
 }
