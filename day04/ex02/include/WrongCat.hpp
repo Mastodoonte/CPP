@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:14:22 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 10:59:30 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/21 14:28:27 by florianmast       #+#    #+#             */
+/*   Updated: 2022/03/04 09:46:10 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.hpp"
-#include "../include/Dog.hpp"
-#include "../include/Cat.hpp"
-#include "../include/WrongCat.hpp"
-#include "../include/WrongAnimal.hpp"
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-int main(void)
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-    std::cout << "[ The animal class can not be instantiate ]" <<  std::endl << std::endl;
-    //Animal test1;
-    Cat test3;
-    return (0);
-    
-}
-    
+public:
+    WrongCat(void);
+    ~WrongCat();
+    WrongCat(const WrongCat & src); //Constructeur par copie
+    WrongCat & operator=(WrongCat const & src); //Assignation 
+
+    void    makeSound(void) const;
+
+private:
+
+};
+
+#endif
