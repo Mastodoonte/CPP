@@ -6,11 +6,11 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:26:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/21 15:57:38 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 09:50:50 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Dog.h"
+#include "../include/Dog.hpp"
 
 Dog::Dog()
 {
@@ -30,6 +30,9 @@ Dog::Dog(Dog const & src)
 
 Dog & Dog::operator=(Dog const & src)
 {
+  std::cout << "Assignation dog called " << std::endl;
+  if (this == &src)
+      return (*this);
   *this = src;
   return (*this);
 }

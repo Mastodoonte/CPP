@@ -6,11 +6,11 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:26:35 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/21 16:28:44 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 09:49:44 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.h"
+#include "../include/Animal.hpp"
 
 Animal::Animal()
 {
@@ -36,6 +36,9 @@ Animal::Animal(Animal const & src)
 
 Animal & Animal::operator=(Animal const & src)
 {
+  if (this == &src)
+      return (*this);
+  this->_type = src._type;
   return (*this);
 }
 

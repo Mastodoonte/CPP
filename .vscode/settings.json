@@ -66,9 +66,10 @@
         "stack": "cpp",
         "filesystem": "cpp"
     },
-    "cpp.creator.headerFileContentPreset": "#ifndef {{*CLASSNAMEUPPER*}}_H\n#define {{*CLASSNAMEUPPER*}}_H\n\n#pragma once\n\nclass {{*CLASSNAME*}}\n{\npublic:\n    {{*CLASSNAME*}}();\n    ~{{*CLASSNAME*}}();\n    {{*CLASSNAME*}}(CLASSNAME* const & src);  //Constructeur par copie\n   \n\n\nprivate:\n\n};\n\n#endif",
+    "cpp.creator.headerFileContentPreset": "/* ************************************************************************** */\n/*                                                                            */\n/*                                                        :::      ::::::::   */\n/*   main.cpp                                           :+:      :+:    :+:   */\n/*                                                    +:+ +:+         +:+     */\n/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */\n/*                                                +#+#+#+#+#+   +#+           */\n/*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */\n/*   Updated: 2022/03/01 13:57:45 by florianmast      ###   ########.fr       */\n/*                                                                            */\n/* ************************************************************************** */\n\n#ifndef {{*CLASSNAMEUPPER*}}_HPP\n#define {{*CLASSNAMEUPPER*}}_HPP\n\n\nclass {{*CLASSNAME*}}\n{\npublic:\n    {{*CLASSNAME*}}();\n    ~{{*CLASSNAME*}}();\n    {{*CLASSNAME*}} (const {{*CLASSNAME*}} &src);\n    {{*CLASSNAME*}} &operator=(const {{*CLASSNAME*}} &src); \n\nprivate:\n\n};\n\n#endif\n",
     "terminal.integrated.commandsToSkipShell": [
         "constructeur par copie"
     ],
-    "workbench.settings.openDefaultKeybindings": true
+    "workbench.settings.openDefaultKeybindings": true,
+    "cpp.creator.headerFileNamePreset": "{{*CLASSNAME*}}.hpp"
 }

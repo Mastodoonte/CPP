@@ -6,15 +6,15 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:14:22 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/21 16:48:35 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 11:28:51 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.h"
-#include "../include/Dog.h"
-#include "../include/Cat.h"
-#include "../include/WrongAnimal.h"
-#include "../include/WrongCat.h"
+#include "../include/Animal.hpp"
+#include "../include/Dog.hpp"
+#include "../include/Cat.hpp"
+#include "../include/WrongAnimal.hpp"
+#include "../include/WrongCat.hpp"
 
 int main(void)
 {

@@ -15,7 +15,9 @@ SRCS	= 	srcs/main.cpp \
 			srcs/Dog.cpp \
 			srcs/Cat.cpp \
 			srcs/Animal.cpp \
-			srcs/Brain.cpp 
+			srcs/Brain.cpp \
+			srcs/WrongAnimal.cpp\
+			srcs/WrongCat.cpp 
 
  		
 ########################################################################################################################################

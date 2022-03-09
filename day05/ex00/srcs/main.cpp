@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 18:28:47 by flmastor         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:31:08 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string>
 #include "../include/Bureaucrat.hpp"
 
+//https://www.youtube.com/watch?v=P8m4xqBcuos//
 int main(void)
 {
     std::cout << "[-- TEST OF NORMAL EMPLOYEE --]" << std::endl;

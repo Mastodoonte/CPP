@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.h                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:26:51 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/21 16:28:31 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/21 14:28:27 by florianmast       #+#    #+#             */
+/*   Updated: 2022/03/04 09:46:10 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include <iostream>
+#include "WrongAnimal.hpp"
 
-
-class Animal
+class WrongCat : public WrongAnimal
 {
 public:
-    Animal();
-    virtual ~Animal();
-    Animal(Animal const & src); //Constructeur par copie
-    Animal & operator=(Animal const & src); //Assignation 
-    
-    const std::string &getType(void) const;
-    virtual void    makeSound(void) const;
-    
-protected:
-    std::string _type;
+    WrongCat(void);
+    ~WrongCat();
+    WrongCat(const WrongCat & src); //Constructeur par copie
+    WrongCat & operator=(WrongCat const & src); //Assignation 
+
+    void    makeSound(void) const;
+
+private:
 
 };
 

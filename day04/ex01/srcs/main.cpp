@@ -6,13 +6,15 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:14:22 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/22 17:26:30 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 10:53:25 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Animal.hpp"
 #include "../include/Dog.hpp"
 #include "../include/Cat.hpp"
+#include "../include/WrongAnimal.hpp"
+#include "../include/WrongCat.hpp"
 
 int main(void)
 {

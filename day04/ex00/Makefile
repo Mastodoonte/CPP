@@ -31,7 +31,7 @@ CLANG = c++
 
 C++FLAGS =  -Wall -Werror -Wextra -std=c++98 -pedantic -g
 
-RM = rm -f
+RM = rm -rf
 
 
 all: ${NAME}
@@ -63,7 +63,13 @@ $(NAME): $(OBJS)
 %.o : %.c
 	$(CLANG) $(CFLAGS) -I $(HEADER) -c $< -o $@
 
+debug:
+	@g++ -g ${SRCS} -Wall -Werror -Wextra -o debog_exec
+	@printf '$(YELLOW)$(BOLD) debog_exec built $(ESC_STOP) √\n' '$@';
+	@printf '\n'
+
 clean: 
+	${RM} ${OBJS} debog_exec debog_exec.dSYM
 	${RM} ${OBJS}
 	@$(PRINT_INTERLINE)
 	@printf '$(RED)$(BOLD)                              %s\ CLEANNING                       \n' '$(NAME)'

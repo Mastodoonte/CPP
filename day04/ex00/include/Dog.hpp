@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.h                                      :+:      :+:    :+:   */
+/*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:26:51 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/21 16:49:33 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/21 14:26:46 by florianmast       #+#    #+#             */
+/*   Updated: 2022/03/04 09:45:42 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_H
-#define WRONGANIMAL_H
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include <iostream>
+#include "Animal.hpp"
 
-
-class WrongAnimal
+class Dog : public Animal
 {
 public:
-    WrongAnimal();
-    virtual ~WrongAnimal();
-    WrongAnimal(WrongAnimal const & src); //Constructeur par copie
-    WrongAnimal & operator=(WrongAnimal const & src); //Assignation 
+    Dog();
+    ~Dog();
+    Dog(const Dog & src); //Constructeur par copie
+    Dog & operator=(Dog const & src); //Assignation 
     
-    const std::string &getType(void) const;
-    void    makeSound(void) const;
-    
-protected:
-    std::string _type;
+    virtual void    makeSound(void) const;
+
+
+private:
 
 };
 

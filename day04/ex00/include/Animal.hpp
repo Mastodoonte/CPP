@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.h                                              :+:      :+:    :+:   */
+/*   Animal.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:26:46 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/21 15:35:13 by florianmast      ###   ########.fr       */
+/*   Created: 2022/02/21 14:26:51 by florianmast       #+#    #+#             */
+/*   Updated: 2022/03/04 09:45:13 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "Animal.h"
+#include <iostream>
 
-class Dog : public Animal
+
+class Animal
 {
 public:
-    Dog();
-    ~Dog();
-    Dog(const Dog & src); //Constructeur par copie
-    Dog & operator=(Dog const & src); //Assignation 
+    Animal();
+    virtual ~Animal();
+    Animal(Animal const & src); //Constructeur par copie
+    Animal & operator=(Animal const & src); //Assignation 
     
+    const std::string &getType(void) const;
     virtual void    makeSound(void) const;
-
-
-private:
+    
+protected:
+    std::string _type;
 
 };
 

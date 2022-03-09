@@ -6,11 +6,11 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:28:14 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/21 16:39:58 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 09:50:34 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cat.h"
+#include "../include/Cat.hpp"
 
 Cat::Cat(void)
 {
@@ -32,7 +32,9 @@ Cat::Cat(Cat const & src)
 
 Cat & Cat::operator=(Cat const & src)
 {
-  std::cout << "Assignation called" << std::endl;
+  std::cout << "Assignation cat called " << std::endl;
+  if (this == &src)
+      return (*this);
   this->_type = src._type;
   return (*this);
 }

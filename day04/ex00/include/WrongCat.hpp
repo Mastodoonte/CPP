@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.h                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:28:27 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/21 16:43:13 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 09:46:10 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_H
-#define WRONGCAT_H
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "WrongAnimal.h"
+#include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal
 {

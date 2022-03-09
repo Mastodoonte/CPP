@@ -6,7 +6,7 @@
 /*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:28:27 by florianmast       #+#    #+#             */
-/*   Updated: 2022/02/21 18:46:32 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/04 10:35:40 by florianmast      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ public:
     Cat(const Cat & src); //Constructeur par copie
     Cat & operator=(Cat const & src); //Assignation 
 
-    virtual void    makeSound(void) const;
-    virtual Brain *get_brain(void) const ;
+    void    makeSound(void) const;
+    Brain *get_brain(void) const ;
 
 private:
     Brain *_brain ;
