@@ -12,6 +12,7 @@ PRINT_INTERLINE = printf '$(GREEN)$(BOLD)=======================================
 PRINT_INTERLINE_N = printf '$(YELLOW)$(BOLD)================================================================================$(ESC_STOP)\n'
 
 SRCS	= 	main.cpp \
+			Span.cpp \
 			
 
 
