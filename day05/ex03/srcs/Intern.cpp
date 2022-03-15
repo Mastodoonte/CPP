@@ -6,7 +6,7 @@
 /*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 20:34:56 by flmastor         ###   ########.fr       */
+/*   Updated: 2022/03/14 12:04:38 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ Form*	Intern::makePardon(std::string target)
 
 Form*	Intern::makeForm(std::string formname, std::string target)
 {
-	std::string	index [3] = {"ShrubberyCreationForm",	"RobotomyRequestForm", "PresidentialPardonForm"};
+	std::string	index [3] = {"shrubbery request",	"robotomy request", "presidential request"};
 	try
 	{
 		{

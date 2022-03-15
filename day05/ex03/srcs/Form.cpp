@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 13:53:03 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/14 14:06:04 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,10 @@ void    Form::beSigned(Bureaucrat const &person)
 
 std::ostream &operator<<(std::ostream &o, Form const &src)
 {
+  Form const *tmp = &src;
+
+  if (tmp == NULL)
+      return (o);
   o << std::endl << "|== INFO OF FORM ==|" << std::endl;
   o << "|==     NAME     ==|" << std::endl;
   o << "" << src.getName() << "" << std::endl;

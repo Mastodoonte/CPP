@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 14:09:31 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/14 14:01:00 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/RobotomyRequestForm.hpp"
 #include <iostream>
+#include <ctime>
+#include <cstddef>
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45, "no_name_target") 
 {
@@ -46,10 +49,12 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm  const &
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
   (void)executor;
+  std::srand(std::time(NULL));
   int ret = rand();
+  
   std::cout << "Robot request form called" << std::endl;
   std::cout  << " BRAAAAAAAAAAAAAAAAAAAAAAAH" << std::endl;
-  if (ret == 0)
+  if ((ret % 2) == 1)
   {
     std::cout << this->getTarget() << " Got robotomised" << std::endl;
   }

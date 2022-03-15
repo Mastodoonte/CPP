@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 11:59:37 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/14 11:59:38 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int	main()
   Bureaucrat test2("Midlle employee", 75);
   Bureaucrat test3("Basic employee", 149);
   
-  Form      *form1 = new PresidentialPardonForm("Jardin");
-  Form      *form2 = new ShrubberyCreationForm("test2");
-  Form      *form3 = new RobotomyRequestForm("test3");
+  Form      *form1 = new PresidentialPardonForm("Obama");
+  Form      *form2 = new ShrubberyCreationForm("Forest");
+  Form      *form3 = new RobotomyRequestForm("Mister robot");
   
   std::cout << std::endl << "[ --TRY TO FIRM SUCESSFULLY-- ]" << std::endl;
   test1.signForm(*form1);

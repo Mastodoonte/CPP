@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:09:13 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/01 18:24:32 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/14 11:15:11 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ class Form;
 
 class Bureaucrat
 {
+private:
+    const std::string _name;
+    int               _rank;
+    Bureaucrat(){};
+    
 public:
     Bureaucrat(std::string name, int rank);
     ~Bureaucrat();
@@ -33,26 +38,8 @@ public:
     void    incrementB(void);
     void    decrementB(void);
     void    signForm(Form &form);
-    
-   
 
-
-private:
-    const std::string _name;
-    int               _rank;
-    Bureaucrat(){};
-
-//https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm#:~:text=A%20C%2B%2B%20exception%20is%20a,try%2C%20catch%2C%20and%20throw.
-
-/*
- *Nous pouvons définir nos propres exceptions en héritant et en surchargeant 
-    La fonctionnalité de la classe exception. l'implentation suivante  
-    montre comment on pouvez utiliser la classe std::exception pour implémenter 
-    notre propre exception et gestion d'erreur de manière standard.
-
- * Le choix de struct permet d'eviter de specifier le "public" 
-
- *Ici, what() est une méthode publique fournie par la classe exception et elle a 
+ /*Ici, what() est une méthode publique fournie par la classe exception et elle a 
     été surchargée par toutes les classes exception enfant. Elle renvoie la cause d'une exception.
  
  *Le retour virtual const char est un pointeur permet de preciser le message d'erreur attaché à l'exeption   */

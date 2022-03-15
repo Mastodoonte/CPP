@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/08 17:31:08 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/14 11:10:14 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <string>
 #include "../include/Bureaucrat.hpp"
 
-//https://www.youtube.com/watch?v=P8m4xqBcuos//
 int main(void)
 {
     std::cout << "[-- TEST OF NORMAL EMPLOYEE --]" << std::endl;
@@ -67,6 +66,15 @@ int main(void)
     {
         std::cout << "[ Decrement ]" << std::endl;
         test3.decrementB();
+    }
+    catch(const std::exception& exeption)
+    {
+        std::cerr << exeption.what() << std::endl;
+    }
+    try
+    {
+        std::cout << "[ Increment ]" << std::endl;
+        test3.incrementB();
     }
     catch(const std::exception& exeption)
     {

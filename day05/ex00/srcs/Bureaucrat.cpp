@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:06:17 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/02 09:47:34 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/14 13:49:39 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ std::string Bureaucrat::getName(void) const
   return (this->_name);
 }
 
-std::string Bureaucrat::getGrade(void) const
+int Bureaucrat::getGrade(void) const
 {
-  return (std::to_string(this->_rank));
+  return (this->_rank);
 }
 
 void    Bureaucrat::incrementB(void)
@@ -82,6 +82,10 @@ void    Bureaucrat::decrementB(void)
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &src)
 {
+  Bureaucrat const *tmp = &src;
+  
+  if (tmp == NULL)
+      return (o);
   o << src.getName() << " bureaucrat grade " << src.getGrade() << std::endl;
   return (o);
 }

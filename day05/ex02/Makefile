@@ -30,7 +30,7 @@ NAME = a.out
 
 CLANG = c++ 
 
-C++FLAGS =  -Wall -Werror -Wextra 
+C++FLAGS =  -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 
@@ -61,7 +61,7 @@ $(NAME): $(OBJS)
 	@$(DRAW_PROGRESS_BAR)
 	@printf '\n'
 
-%.o : %.c
+%.o : %.cpp
 	$(CLANG) $(C++FLAGS) -I $(HEADER) -c $< -o $@
 
 debug:

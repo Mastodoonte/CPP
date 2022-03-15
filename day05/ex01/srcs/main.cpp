@@ -6,7 +6,7 @@
 /*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 19:47:53 by flmastor         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:54:56 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int main(void)
   try
   {
      Form      form2("Disclosure agreement", 1000, 50);
+     std::cout << form2;
      test1.signForm(form2);
   }
   catch(const std::exception& e)

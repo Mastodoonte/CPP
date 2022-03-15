@@ -6,7 +6,7 @@
 /*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:09:13 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 18:26:00 by flmastor         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:49:53 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 
 class Bureaucrat
 {
+private:
+    const std::string _name;
+    int               _rank;
+    Bureaucrat(){};
+
 public:
     Bureaucrat(std::string name, int rank);
     ~Bureaucrat();
@@ -26,18 +31,10 @@ public:
     Bureaucrat &operator=(const Bureaucrat &src);
 
     std::string getName(void) const;
-    std::string getGrade(void) const ; 
+    int getGrade(void) const ; 
     void    incrementB(void);
     void    decrementB(void);
     
-   
-
-
-private:
-    const std::string _name;
-    int               _rank;
-    Bureaucrat(){};
-
 
 };
 
@@ -55,7 +52,7 @@ private:
     été surchargée par toutes les classes exception enfant. Elle renvoie la cause d'une exception.
  
  *Le retour virtual const char est un pointeur qui permet de preciser le message d'erreur attaché à l'exeption   */
-class GradeTooHighException: public std::exception
+struct GradeTooHighException: public std::exception
 {
       virtual const char* what() const throw() 
       {

@@ -6,7 +6,7 @@
 /*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/04 19:57:48 by flmastor         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:40:01 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,10 @@ void    Form::beSigned(Bureaucrat const &person)
 
 std::ostream &operator<<(std::ostream &o, Form const &src)
 {
+  Form const *tmp = &src;
+
+  if (tmp == NULL)
+      return (o);
   o << std::endl << "|== INFO OF FORM ==|" << std::endl;
   o << "|==     NAME     ==|" << std::endl;
   o << "" << src.getName() << "" << std::endl;
@@ -122,6 +126,6 @@ void		Form::execute(Bureaucrat const &executor) const
   {
   		throw Form::GradeTooLowException();
   }
-  else
-    execute(executor);
+//  else
+  //  execute(executor);
 }
