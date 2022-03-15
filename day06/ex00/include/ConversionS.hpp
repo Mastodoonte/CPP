@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ConversionS.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 15:53:09 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/08 11:35:14 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/15 14:01:27 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 #define CONVERSIONS_H
 #include <exception>
 #include <limits>
-//#include <cmath>
-//#include <cctype>
-
+#include <iostream>
+#include <stdlib.h>     /* atof */
+#include <math.h>
+# include <limits>
+# include <cmath>
+#include <iomanip>
+#include <string> 
 
 
 class ConversionS
@@ -33,10 +37,11 @@ public:
 
     //Cast operator qui permettent une conversion, 
     //le compilateur verifie dans la classe si il y a un equivalent, cela peut se faire pour des casts implicit
+    void    check(const char *input, std::string str);
     operator int() const;
     operator char() const;
-    operator float() const;
-    operator double() const;
+    float toFloat(void);
+    double toDouble(void);
 
     //---------------------------------------------------------------------------------------------//
     struct Problem : public std::exception

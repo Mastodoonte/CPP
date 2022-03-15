@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ConversionS.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:57:41 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/08 11:39:56 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/15 14:02:38 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ConversionS.hpp"
-#include <iostream>
-
 
 ConversionS::ConversionS(const char *input) : _num(false)
 {
-   // std::cout << "Constructor call of ConversionS" << std::endl;
+    (void)input; 
+}
+
+void    ConversionS::check(const char *input, std::string str)
+{
+    (void)str;
     int i = 0;
     while (input[i])
     {
@@ -24,15 +27,13 @@ ConversionS::ConversionS(const char *input) : _num(false)
             this->_num = true;
         i++;    
     }
-    if (this->_num == false)
-        this->_value = static_cast<double>(*input);
-    //Convert string to double
-   // Parses str interpreting its content as a floating-point number, 
-   // which is returned as a value of type double.
-    else
-        this->_value = std::stod(static_cast<const std::string>(input));
+    try
+    {
+        
+        this->_value = std::atof(input);
+    }
+    catch (std::exception & e) { throw ProblemInput(); } 
 }
-
 ConversionS::~ConversionS()
 {
   //  std::cout << "Destructor call of ConversionS" << std::endl;
@@ -51,37 +52,46 @@ ConversionS &ConversionS::operator=(const ConversionS &src)
     return (*this);
 }
 
+//isnan Returns whether x is a NaN (Not-A-Number) value.
 ConversionS::operator int() const
 {
-	double	conv = static_cast<double>(*this);
+	int	conv = static_cast<int>(this->_value);
 
 	if (isnan(conv) || !(std::numeric_limits<int>::min() <= conv && conv <= std::numeric_limits<int>::max()))
 		throw (Problem());
-	return (static_cast<int>(conv));
+   // int static
+	return (conv);
+   // int i = static_cast<int>(this->_value);
+    //return (i);
+    
 }
 
 ConversionS::operator char() const
 {
-	int	conv = static_cast<int>(*this);
+	int	conv = static_cast<int>(this->_value);
 
 	if (conv <= std::numeric_limits<char>::min() || conv >= std::numeric_limits<char>::max())
+    {
+        std::cout << "char: ";
 		throw (Problem());
+    }
 	if (conv < 32 || conv > 126)
+    {
+        std::cout << "char: ";
 		throw (ProblemDisplay());
+    }
 	return (static_cast<char>(conv));
 }
 
-ConversionS::operator float() const
+float ConversionS::toFloat(void) 
 {
 	
-	double	conv = static_cast<double>(*this);
-
-	return (static_cast<float>(conv));
+	return (static_cast<float>(this->_value));
 }
 
-ConversionS::operator double() const
+double ConversionS::toDouble(void) 
 {
-	if (this->_value == -1.0)
-		throw (Problem());	
-	return (this->_value);
+  //  std::cout << this->_value;
+    double ret = static_cast<double>(this->_value);
+	return (ret);
 }
