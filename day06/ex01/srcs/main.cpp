@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florianmastorakis <florianmastorakis@st    +#+  +:+       +#+        */
+/*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:16:12 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/08 15:26:17 by florianmast      ###   ########.fr       */
+/*   Updated: 2022/03/15 20:22:08 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 * C'est un type d'entier non signé qui est capable de stocker un pointeur de données.
 * Ce qui signifie généralement qu'il a la même taille qu'un pointeur.
 * Il est défini de manière facultative dans les normes C++11 et ultérieures.
-* Une raison courante de vouloir un type entier qui peut contenir le type de pointeur
-* d'une architecture est d'effectuer des opérations spécifiques aux entiers sur un pointeur,
-* ou de masquer le type d'un pointeur en le fournissant comme un "handle" entier.
+* Une raison courante de vouloir un type entier contenant un pointeur dans une
+*  architecture quelquonque c'est:
+*       - pour effectuer des opérations spécifiques aux entiers via des pointeurs,
 *
-* l'interet encore de ce type non signé est que tous les pointeurs pointant vers void
-* peut être converti en ce type, puis en void de nouveau en conservant le pointeur originel
+*       - de masquer le type d'un pointeur en le fournissant comme un "handle" entier.
+*
+*       -l'interet encore de ce type non signé est que tous les pointeurs pointant vers void
+* peut être converti en ce type, puis en void de nouveau en conservant le pointeur original
 */
 
 
@@ -50,7 +52,6 @@ Data *deserialize(uintptr_t raw)
 
 int main ()
 {
- //On a créé une classe mais en réalité c'est juste pour tester
   Data      *data_ptr = new Data(42);
 
   std::cout << "|========================================================================|" << std::endl;
@@ -61,18 +62,18 @@ int main ()
   std::cout << "|------------------------------------------------------------------------|" << std::endl;
   uintptr_t ptr = serialize(data_ptr);
   std::cout << "  Here we are serializing the data into a specific pointer to make it raw \n  thanks to the reinterpret_cast\n " << std::endl;
-  std::cout << "  Memory Adress of Data" << &ptr << std::endl;
+  std::cout << "  Memory Adress of Data " << &ptr << std::endl;
   std::cout << "  Value of data = " << ptr << std::endl;
   std::cout << "|========================================================================|" << std::endl;
   std::cout << "                  DESERIALIZE TO MAKE IT BACK TO NORMAL"<< std::endl;
   std::cout << "|------------------------------------------------------------------------|" << std::endl;
   std::cout << "  From raw to normal / fron uintptr_t to int" << &ptr << std::endl;
   Data *data_ptr_compare = deserialize(ptr);
-  std::cout << "  Memory Adress of Data" << data_ptr_compare << std::endl;
+  std::cout << "  Memory Adress of Data " << data_ptr_compare << std::endl;
   std::cout << "  Value of data = " << data_ptr_compare->getData() << std::endl;
   std::cout << "|========================================================================|" << std::endl;
   if (data_ptr_compare == data_ptr)
-  std::cout << "SUCESS" << std::endl;
+  std::cout << "                                   SUCCESS" << std::endl;
   //Only one free because pointing to the same adress
   delete(data_ptr);
   //delete(data_ptr_compare);

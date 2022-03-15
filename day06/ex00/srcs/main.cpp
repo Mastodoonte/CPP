@@ -6,7 +6,7 @@
 /*   By: flmastor <flmastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 15:05:14 by florianmast       #+#    #+#             */
-/*   Updated: 2022/03/15 14:01:36 by flmastor         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:03:47 by flmastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void    conv_treat(char *input, std::string str)
     {
         std::cerr << e.what() << '\n';
     }
-    std::cout << std::setprecision(1) << std::fixed;
+    //std::cout << std::setprecision(1) << std::fixed;
     try//Float
     {
         std::cout << "float: " << conversion.toFloat() << "f" << std::endl;   
