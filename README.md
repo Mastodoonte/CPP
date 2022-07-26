@@ -18,6 +18,6 @@ You will discover new concepts as you go along. Their difficulty will increase.
 
 
 ## 👀 Objectives
-This project brought us to work on the cpp language for the first time. We covered many topics such as subtype polymorphism, abstract classes and interfaces, iterators, algorithms, inheritance and many others. 
+This project brought us to work on the cpp language for the first time. We covered many topics such as subtype polymorphism, abstract classes interfaces, iterators, algorithms, inheritance and many others. 
 
 <!--badges : https://badge42.vercel.app-->
