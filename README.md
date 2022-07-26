@@ -11,8 +11,9 @@ These modules are designed to introduce you to Object Oriented Programming. Seve
 We are aware that modern C++ is different in many aspects. If you want to improve your C++ skills, it's up to you to dig deeper after the 42 core!
 You will discover new concepts as you go along. Their difficulty will increase.
 
-![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)
+![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)
 ![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)
+![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)
 
 
 
